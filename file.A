@@ -1,0 +1,14 @@
+#include <json/value.h>
+#include <fstream>
+
+std::ifstream A_file("A.json", std::ifstream::binary);
+A_file >> A;
+
+cout<<A; //This will print the entire json object.
+
+//The following lines will let you access the indexed objects.
+cout<<A["Anna"]; //Prints the value for "Anna"
+cout<<A["ben"]; //Prints the value for "Ben"
+cout<<A["Anna"]["profession"]; //Prints the value corresponding to "profession" in the json for "Anna"
+
+cout<<A["profession"]; //NULL! There is no element with key "profession". Hence a new empty element will be created.
